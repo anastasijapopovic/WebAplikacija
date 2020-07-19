@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Profil</title>
+		<style>
+			h1 {text-align: center;
+				font-family: monospace;
+				color: white;}
+			fieldset {text-align: center;
+				  	font-family: monospace;
+				  	font-size:35px;
+				  	width:500px;
+				  	margin: auto;
+				  	color: white;}
+			legend {align-content: center;
+					font-size: 30px;
+					font-family: monospace;}
+			label {font-size:25px;}
+			img {vertical-align: middle;
+				 width: 90px;
+				 height: 90px;
+				 border-radius: 90px;}
+			a {font-family: monospace;
+			  text-decoration: none;
+		  	  color: white;
+		  	  text-align: center;
+		  	  font-size: 25px;}
+			p {font-size:20px;}
+			body {background-image: url("https://i.pinimg.com/originals/73/c5/d1/73c5d17994b76d138d2743f1d5e65187.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				height: 100%;}
+		</style>
+	</head>
+	
+	<body>
+		<div>
+			<h1>PROFIL</h1>
+			<hr/><br/><br/>
+			<a th:href="${'/pocetna'}"><li>Pocetna stranica</li></a>
+			<br/><br/>
+			<fieldset>
+			<legend>
+				<p th:text="${menadzeri.korisnicko}"> </p>
+			</legend>
+			<img src="images/menadzer.jpg" alt="Profilna slika" class="avatar">
+			<br/>
+				<label for="nameField">Ime:</label>
+				<p th:text="${menadzeri.ime}"> </p>
+				<label for="surnameField">Prezime:</label>
+				<p th:text="${menadzeri.prezime}"> </p>
+				<label for="phoneField">Telefon:</label>
+				<p th:text="${menadzeri.telefon}"> </p>
+				<label for="mailField">e-mail:</label>
+				<p th:text="${menadzeri.mail}"> </p>
+				<label for="birthdayField">Datum rodjenja:</label>
+				<p th:text="${menadzeri.datum}"> </p>
+				<label for="roleField">Uloga:</label>
+				<p th:text="${menadzeri.uloga}"> </p>
+		</fieldset>
+		<br/><br/><br/><br/><br/><br/>
+		</div>
+	</body>
+</html> 

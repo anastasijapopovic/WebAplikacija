@@ -1,0 +1,166 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Kreiranje naloga</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+	  	<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+	  	
+	  		<!--Bootsrap 4 CDN-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	    
+	    <!--Fontawesome CDN-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		
+		<style>
+			h1 {text-align: center;
+				font-family: monospace;
+				color: white;}
+			h2 {font-size:15px;
+				font-family: serif;
+				color: white;}
+			h3 {font-size:14px;
+				font-family: serif;}
+			a {font-size:20px;
+				font-family: serif;
+				color: #6699ff;}
+			fieldset {text-align: center;
+					  font-family: monospace;
+					  font-size:35px;
+					  width:500px;
+					  margin: auto;
+					  color: white;}
+			label {font-size:15px;}
+			legend {align-content: center;}
+			div {font-size:15px;
+				text-align: center;
+				font-family: serif;
+				color: #6699ff}
+			body {background-image: url("https://i.pinimg.com/originals/73/c5/d1/73c5d17994b76d138d2743f1d5e65187.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				height: 190%;}
+		</style>
+		<script src="/js/jquery.min.js"></script>
+    	<script type="text/javascript" src="/js/kreirajNalog.js"></script>
+	</head>
+	<body>
+		<div>
+		<h1>KREIRAJTE NOVI NALOG</h1>
+		<hr/><br/>
+		<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ml" >
+					<a href="index.html" class="nav-item nav-link active">Pocetna</a>
+					<a href="Filmovi.html" class="nav-item nav-link ">Repertoar</a>
+					<a href="Bioskopi.html" class="nav-item nav-link">Bioskop</a>
+					<a href="Pretraga.html" class="nav-item nav-link ">Pretraga</a>
+				</div>
+				<div class="navbar-nav ml-auto">
+					<a  href="Login.html" class="nav-item nav-link">Ulogujte se</a>
+					<a href="KreirajNalog.html" class="nav-item nav-link">Kreirajte nalog</a>
+				</div>
+			</div>
+		</nav>
+		
+		<fieldset>
+			<legend>BIOSKOP</legend>
+			<h2>Kreirajte novi nalog da biste online rezervisali karte za bioskop.</h2>
+			<div class="container">
+			<div class="d-flex justify-content-center h-200">
+				<div class="card">
+					<div class="card-body">
+						<form id="registerForm">
+						<label for="korisnicko">Username</label>
+							<div class="input-group form-group">
+							
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-users"></i></span>
+								</div>
+								
+								<input type="text" id="korisnicko" class="form-control" required>
+								</div>
+								<label for="lozinka">Lozinka</label>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-lock"></i></span>
+								</div>
+								
+								<input type="password" id="lozinka" class="form-control" required>
+							</div>
+							<label for="ime">Ime</label>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-user"></i></span>
+								</div>
+								
+								<input type="text" id="ime" class="form-control" required>
+							</div>
+							<label for="prezime">Prezime</label>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-user"></i></span>
+								</div>
+								
+								<input type="text" id="prezime" class="form-control" required>
+							</div>
+							<label for="telefon">Telefon</label>
+							 <div class="form-group input-group">
+						    	<div class="input-group-prepend">
+								    <span class="input-group-text"> <i class="fas fa-mobile-alt"></i> </span>
+								</div>
+								
+					    		<input name=""  id="telefon" class="form-control" type="text">
+					   		 </div>
+					   		<label for="mail">E-mail</label>
+					   		 <div class="form-group input-group">
+						    	<div class="input-group-prepend">
+								    <span class="input-group-text"> <i class="fas fa-at"></i> </span>
+								 </div>
+								 
+						        <input name="mail" id="mail" class="form-control" type="email">
+						    </div>
+						    <label for="datum">Datum rodjenja</label>
+						     <div class="form-group input-group">
+						    	<div class="input-group-prepend">
+								    <span class="input-group-text"> <i class="fas fa-birthday-cake"></i> </span>
+								 </div>
+								 
+						        <input name="" id="datum" class="form-control" placeholder="datum" type="date">
+						    </div>					    
+						    
+							<div class="row align-items-center col-xs-7 col-sm-6 col-lg-8 remember">
+								<input type="checkbox">Zapamti me
+							</div>
+							<div class="form-group">
+								<input type="submit" value="Kreiraj nalog" class="btn float-center login_btn">
+							</div>
+						</form>
+					</div>
+					<div class="card-footer">
+						<div class="d-flex justify-content-center links">
+							Imate nalog?
+						</div>
+						<div class="d-flex justify-content-center">
+							<a href="Login.html" >Ulogujte se</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	    <h3>Ako se registrujete, prihvatate naše Uslove korišćenja i Politiku o podacima.</h3>
+		</fieldset> 
+		<br/><br/><br/><br/>
+		</div>
+	</body>
+</html>	

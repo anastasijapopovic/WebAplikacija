@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Profil</title>
+		<style>
+			h1 {text-align: center;
+				font-family: monospace;
+				color: white;}
+			fieldset {text-align: center;
+				  	font-family: monospace;
+				  	font-size:35px;
+				  	width:500px;
+				  	margin: auto;
+				  	color: white;}
+			legend {align-content: center;
+					font-size: 30px;
+					font-family: monospace;}
+			label {font-size:25px;}
+			img {vertical-align: middle;
+				 width: 90px;
+				 height: 90px;
+				 border-radius: 90px;}
+			a {font-family: monospace;
+			  text-decoration: none;
+		  	  color: white;
+		  	  text-align: center;
+		  	  font-size: 25px;}
+			p {font-size:20px;}
+			body {background-image: url("https://i.pinimg.com/originals/73/c5/d1/73c5d17994b76d138d2743f1d5e65187.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				height: 100%;}
+		</style>
+	</head>
+	
+	<body>
+		<h1>PROFIL ADMINA</h1>
+		<hr/><br/>
+		
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<!-- <a href="#" class="navbar-brand">
+				<img src="/images/logo1.png" height="28" alt="CoolBrand">
+			</a> -->
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ml" >
+					<a href="index.html" class="nav-item nav-link active">Pocetna</a>
+					<a href="Filmovi.html" class="nav-item nav-link ">Filmovi</a>
+					<a href="Pretraga.html" class="nav-item nav-link ">Pretraga</a>
+					<a href="index.html" class="nav-item nav-link ">Raspored</a>
+					<a href="Bioskopi.html" class="nav-item nav-link">Bioskop</a>
+				</div>
+				<div class="navbar-nav ml-auto">
+					<a  href="Login.html" class="nav-item nav-link">Ulogujte se</a>
+					<a href="KreirajNalog.html" class="nav-item nav-link">Kreirajte nalog</a>
+				</div>
+			</div>
+		</nav>
+		
+		<section class="text-center">
+		<hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 200px;">
+	    <div class="row">
+	      <div class="col-lg-6">
+	
+	        <img src="images/admin.jpg" alt="Profilna slika" class="avatar">
+	     <!--  
+			<a href="#" class="btn btn-outline-danger btn-lg btn-block dropdown-toggle" data-toggle="dropdown">Registracija Menadžera</a>
+			<div class="menii dropdown-menu">
+				<a class="dropdown-item btn btn-outline-danger btn-lg btn-block" th:href="${'/add-Menadzer'}">Dodaj novog</a>
+				<a class="dropdown-item btn btn-outline-danger btn-lg btn-block" th:href="${'/register-Menadzer'}" >Aktiviraj neaktivne naloge</a>
+			</div>
+			
+			  <a th:href="${'/register-Menadzer'}" style="text-decoration : none">
+			<button type="button" class="btn btn-outline-danger btn-lg btn-block">Registracija menadžera</button>
+	        </a>-->
+	     	<!-- <a th:href="${'/add-Menadzer'}" style="text-decoration : none"> -->
+			<button type="button" class="btn btn-outline-danger btn-lg btn-block">Registracija menadzera</button>
+	        <!-- </a> -->
+	        <!--  
+	        <a th:href="${'/register-Menadzer'}" style="text-decoration : none">
+			<button type="button" class="btn btn-outline-danger btn-lg btn-block">Aktiviraj menadžera</button>
+	        </a>
+	        -->
+			<button type="button" class="btn btn-outline-danger btn-lg btn-block">Ukloni menadzera</button>
+			
+		  <a href="#" class="btn btn-outline-danger btn-lg btn-block dropdown-toggle" data-toggle="dropdown">Bioskopi</a>
+			<div class="menii dropdown-menu">
+				<a class="dropdown-item btn btn-outline-danger btn-lg btn-block" th:href="${'/bioskop-dodaj'}">Dodavanje bioskopa</a>
+				<a class="dropdown-item btn btn-outline-danger btn-lg btn-block" href="#">Ukloni bioskop</a>
+				<a class=" btn btn-outline-danger btn-lg btn-block dropdown-item" href="#">Izmeni bioskop</a>
+			</div>
+			
+	      </div>
+	
+	      <div class="col-lg-5 text-center text-md-left">
+	
+	        <h2 th:text="${admin.ime}" class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-5 ml-4"></h2>
+	        
+	       
+	        <div class="font-weight-normal">
+	          
+	          
+	          <div class="ml-xl-5 ml-4">
+	            <p><strong>Korisnicko ime: </strong><span th:text="${admin.korisnickoIme}"></span></p>
+	          </div>
+	         <div class="ml-xl-5 ml-4">
+	            <p><strong>Lozinka: </strong><span th:text="${admin.lozinka}"></span></p>
+	          </div>
+	          <div class="ml-xl-5 ml-4">
+	            <p><strong>Ime: </strong><span th:text="${admin.ime}"></span></p>
+	          </div>
+	         <div class="ml-xl-5 ml-4">
+	            <p><strong>Prezime: </strong><span th:text="${admin.prezime}"></span></p>
+	          </div>
+			<div class="ml-xl-5 ml-4">
+	            <p><strong>Kontakt telefon: </strong><span th:text="${admin.kontaktTelefon}"></span></p>
+	          </div>
+			   <div class="ml-xl-5 ml-4">
+	            <p><strong>E adresa: </strong><span th:text="${admin.Eadresa}"></span></p>
+	          </div>
+			 <div class="ml-xl-5 ml-4">
+	            <p><strong>Datum rođenja: </strong><span th:text="${admin.datumRodjenja}"></span></p>
+	          </div>
+			<div class="ml-xl-5 ml-4">
+	            <p><strong>Uloga: </strong><span th:text="${admin.uloga}"></span></p>
+	          </div>
+	          
+	        </div>
+	
+	      </div>
+	    </div>
+	
+	  </section>
+	  <!--Section: Content-->
+		
+		<!-- 
+			<a th:href="${'/pocetna'}"><li>Pocetna stranica</li></a>
+			<br/>
+			<a th:href="${'/dodaj-bioskop'}"><li>Dodaj bioskop</li></a>
+			<br/>
+			<a th:href="${'/dodaj-menadzera'}"><li>Dodaj menadzera</li></a>
+			<br/>
+			<fieldset>
+			<legend>
+				<p th:text="${admin.korisnicko}">  </p>
+			</legend>
+			<img src="images/admin.jpg" alt="Profilna slika" class="avatar">
+			<br/>
+				<label for="nameField">Ime:</label>
+				<p th:text="${admin.ime}"> </p>
+				<label for="surnameField">Prezime:</label>
+				<p th:text="${admin.prezime}"> </p>
+				<label for="phoneField">Telefon:</label>
+				<p th:text="${admin.telefon}"> </p>
+				<label for="mailField">e-mail:</label>
+				<p th:text="${admin.mail}"> </p>
+				<label for="birthdayField">Datum rodjenja:</label>
+				<p th:text="${admin.datum}"> </p>
+				<label for="roleField">Uloga:</label>
+				<p th:text="${admin.uloga}"> </p>
+		</fieldset>
+		<br/><br/><br/><br/><br/><br/>
+		</div> -->
+	</body>
+</html>

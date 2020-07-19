@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Film</title>
+		<style>
+			h1 {text-align: center;
+				font-family: monospace;
+				color: white;}
+			fieldset {text-align: center;
+				  	font-family: monospace;
+				  	font-size:35px;
+				  	width:500px;
+				  	margin: auto;
+				  	color: white;}
+			tr {text-align: center;
+				font-family: monospace;
+				font-size:20px;
+				color: white;}
+			legend {align-content: center;
+					font-size: 30px;
+					font-family: monospace;}
+			label {font-size:25px;}
+			a {text-decoration: none;
+		  	  color: white;}
+		    body {background-image: url("https://i.pinimg.com/originals/73/c5/d1/73c5d17994b76d138d2743f1d5e65187.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				height: 100%;}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<!-- <a href="#" class="navbar-brand">
+				<img src="/images/logo1.png" height="28" alt="CoolBrand">
+			</a> -->
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ml" >
+					<a href="index.html" class="nav-item nav-link active">Pocetna</a>
+					<a href="Filmovi.html" class="nav-item nav-link ">Filmovi</a>
+					<!-- <a href="Pretraga.html" class="nav-item nav-link ">Pretraga</a> -->
+					<a href="index.html" class="nav-item nav-link ">Raspored</a>
+					<a href="Bioskopi.html" class="nav-item nav-link">Bioskop</a>
+				</div>
+				<div class="navbar-nav ml-auto">
+					<a  href="Login.html" class="nav-item nav-link">Ulogujte se</a>
+					<a href="KreirajNalog.html" class="nav-item nav-link">Kreirajte nalog</a>
+				</div>
+			</div>
+		</nav>			
+		<div class="container my-5 py-5 z-depth-1">
+		<!--Section: Content-->
+	  	<section class="text-center">
+	
+	    <!-- Section heading -->
+	    <h3 class="font-weight-bold " th:text="${film.naziv}" ></h3>
+		<hr class=" accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 200px;">
+	
+	   	<div class="row">
+	      <div class="col-lg-6">
+	
+	        <img th:src="@{'/images/'+${film.naziv}+'.jpg'}" alt="Slika filma" style="width:50%; height:270px;"/>   
+	      </div>
+	
+	      <div class="col-lg-5 text-center text-md-left">
+	        
+	       <div class="font-weight-normal">
+	          
+	           <div class="ml-xl-5 ml-4">
+	            <p><strong>Naziv: </strong><span th:text="${film.naziv}"></span></p>
+	          </div>
+	          <div class="ml-xl-5 ml-4">
+	            <p><strong>Žanr: </strong><span th:text="${film.zanr}"></span></p>
+	          </div>
+	         <div class="ml-xl-5 ml-4">
+	            <p><strong>Trajanje: </strong><span th:text="${film.trajanje}"></span></p>
+	          </div>
+	          <div class="ml-xl-5 ml-4">
+	            <p><strong>Srednja ocjena: </strong><span th:text="${film.srednja_ocjena}"></span></p>
+	          </div>
+	         <div class="ml-xl-5 ml-4">
+	            <p><strong>Opis: </strong><span th:text="${film.opis}"></span></p>
+	          </div>
+	          
+	          <a th:href="${'/add-Menadzer'}" style="text-decoration : none">
+			<button type="button" class="btn btn-outline-danger btn-lg btn-block">Rezerviši</button>
+	        </a>
+	          
+	          
+	
+	        </div>
+	
+	      </div>
+	    </div> 
+	    
+	    
+	    
+	    
+	    <div class="row">
+	      
+	        
+			<table class="table table-hover table-striped table-dark">
+				  <thead>
+				    <tr>
+				      <th scope="col">Datum održavanja</th>
+				      <th scope="col">Vrijeme početka</th>
+				      <th scope="col">Cijena</th>
+				      <th scope="col">Broj rezervacija</th>
+				      <th scope="col">Bioskop</th>
+				      <th scope="col">Sala</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr th:each="terminski_raspored:${projekcije}">
+				      <th scope="row" th:text="${terminski_raspored.datum_odrzavanja}"></th>
+				      <td th:text="${terminski_raspored.vrijeme_pocetka}"></td>
+				      <td th:text="${terminski_raspored.cijena}">din</td>
+				      <td th:text="${terminski_raspored.broj_rezervacija}"></td>
+				      <td th:text="${terminski_raspored.sala.getBioskop().getNaziv()}"></td>
+				      <td th:text="${terminski_raspored.sala.getOznaka_sale()}"></td>
+				   	 <!--  <td><a class="text-danger" th:href="${'/menadzeri/' + menadzer.id}">Aktiviraj Nalog</a></td>-->
+				    </tr>
+				  </tbody>
+				</table>
+	          
+	
+	        
+	    </div>
+	
+	  </section>
+	  <!--Section: Content-->
+	</div>
+	
+	</body>
+</html>

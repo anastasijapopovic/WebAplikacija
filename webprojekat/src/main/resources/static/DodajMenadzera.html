@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Dodavanje menadzera</title>
+		<style>
+			h1 {text-align: center;
+				font-family: monospace;
+				color: white;}
+			a {font-size:15px;
+				font-family: sans-serif;
+				color: white;}
+			fieldset {text-align: center;
+					  font-family: monospace;
+					  font-size:35px;
+					  width:500px;
+					  margin: auto;
+					  color: white;}
+			label {font-size:20px;}
+			legend {align-content: center;}
+			body {background-image: url("https://i.pinimg.com/originals/73/c5/d1/73c5d17994b76d138d2743f1d5e65187.jpg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				height: 100%;}
+		</style>
+	</head>
+	<body>
+		<div>
+		<h1>DODAVANJE MENADZERA</h1>
+		<hr/><br/><br/><br/><br/>
+		<fieldset>
+			<legend>MENADZERI</legend>
+			<form th:action="@{/dodat-menadzer}" th:object="${menadzeri}" method="post">
+				<label for="imeField">Ime:</label>
+				<input id="imeField" type="text" 
+					   th:field="*{ime}"
+					   name="ime" size="15" maxlength="15"
+	                   required="required"
+	                   placeholder="Ime"
+	                   list="ime"/>
+	            <br/>
+	            <label for="prezimeField">Prezime:</label>
+				<input id="prezimeField" type="text" 
+					   th:field="*{prezime}"
+					   name="prezime" size="15" maxlength="15"
+	                   required="required"
+	                   placeholder="Prezime"
+	                   list="prezime"/>
+	            <br/>
+	            <label for="korisnickoField">Korisnicko ime:</label>
+				<input id="korisnickoField" type="text" 
+					   th:field="*{korisnicko}"
+					   name="korisnicko" size="15" maxlength="15"
+	                   required="required"
+	                   placeholder="Ime"
+	                   list="ime"/>
+	            <br/>
+	            <label for="lozinkaField">Lozinka:</label>
+	            <input id="lozinkaField" type="password"
+	            		th:field="*{lozinka}"
+	            	   size="20" maxlength="20"
+	                   name="lozinka" required="required"
+	                   placeholder="Lozinka"/>
+	            <br/>
+	            <label for="telefonField">Telefon:</label>
+	            <input type="tel" id="telefonField"
+	            		th:field="*{telefon}"
+	            	   size="10" maxlength="15"
+	                   name="Broj" required="required"
+	                   placeholder="Broj telefona"/>
+	            <label for="emailField">E-mail:</label>
+	            <input type="email" id="emailField"
+	            		th:field="*{mail}"
+	            	   size="10" maxlength="15"
+	                   name="Mail" required="required"
+	                   placeholder="email"/>
+	            <br/>
+	            <label for="birthdayField">Datum rođenja:</label>
+	            <input type="date" id="birthdayField"
+	            		th:field="*{datum}"
+	                   name="Rodjendan" placeholder="Datum rodjenja"/>
+	            <br/>
+	            <label for="roleField">Uloga:</label>
+	            <select th:field="*{uloga}">
+	         		<option value="admin" th:text="admin"> </option>
+	         		<option value="menadzer" th:text="menadzer"> </option>
+	            </select>
+	            <br/>
+	            <a th:href="${'/pocetna'}">
+	            	<input type="submit" value="Dodajte menadzera"/>
+	            </a>
+	            </form>
+	            <br/>
+			</fieldset> 
+		<br/><br/><br/><br/>
+		</div>
+	</body>
+</html> -->
